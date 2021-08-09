@@ -18,6 +18,8 @@ const ItemCarrinho = styled.div`
 
 export class Carrinho extends React.Component {
     render() {
+
+        console.log("PRODUTOS DENTRO DO CARRINHO",this.props.produtosCarrinho)
         return <CarrinhoContainer>
             <h3>Carrinho</h3>
             <ListaCarrinho>
@@ -39,6 +41,6 @@ export class Carrinho extends React.Component {
             </ListaCarrinho>
             
         </CarrinhoContainer>
-    }
+    };
 
 }

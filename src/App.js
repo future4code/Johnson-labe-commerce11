@@ -9,14 +9,32 @@ const AppContainer = styled.div `
     grid-template-columns: 1fr 2fr 1fr;
 `
 
-function App() {
-  return (
-    <AppContainer>
-      <Filtros/>
-      <Produtos/>
-      <Carrinho/>
-    </AppContainer>
-  )
+class App extends React.Component {
+  state = {
+    carrinho:[],
+  }
+
+  onClickAdicionarCarrinho = (produto) => { 
+
+       
+
+    const copiaCarrinho = [...this.state.carrinho]
+
+    copiaCarrinho.push(produto)
+
+    this.setState({carrinho: copiaCarrinho})
+
+}
+
+  render() {
+    return (
+      <AppContainer>
+        <Filtros/>
+        <Produtos onClickAdicionarCarrinho={this.onClickAdicionarCarrinho}/>
+        <Carrinho produtosCarrinho={this.state.carrinho}/>
+      </AppContainer>
+    );
+  };  
 }
 
 

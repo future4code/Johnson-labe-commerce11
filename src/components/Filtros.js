@@ -36,6 +36,6 @@ export class Filtros extends React.Component {
             </div>
             </InputsContainer>
         </FiltrosContainer>
-    }
+    };
 
 }

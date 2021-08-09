@@ -71,21 +71,19 @@ export class Produtos extends React.Component {
             imageUrl: "https://picsum.photos/200/200?a=5",        
             },
         ],
+        
+        
     }; 
 
-    onClickAdicionarCarrinho = (produto) => { 
-
-        console.log("ADICIONAR AO CARRINHO", produto)
-
-    }
+   
 
 
     render() {
+
+        console.log(this.state.carrinho)
         const produtos = this.state.produtos
 
-        console.log("PRODUTOS", this.state.produtos)
-
-        const listaDeComponentes = this.state.produtos.map((cadaProduto) => {
+            const listaDeComponentes = this.state.produtos.map((cadaProduto) => {
             
             return ( 
                 <CardProduto>
@@ -93,7 +91,7 @@ export class Produtos extends React.Component {
                 <InfosProduto>
                     <p>{cadaProduto.name}</p>
                     <p>R$ {cadaProduto.value}</p>
-                    <button onClick={() => this.onClickAdicionarCarrinho(cadaProduto)}>Adicionar ao carrinho</button>
+                    <button onClick={() => this.props.onClickAdicionarCarrinho(cadaProduto)}>Adicionar ao carrinho</button>
                 </InfosProduto>
                 </CardProduto>
             );
@@ -117,10 +115,9 @@ export class Produtos extends React.Component {
 
            <ProdutosGrid>
                {listaDeComponentes}
-
-           </ProdutosGrid>
-
+            </ProdutosGrid>
+            
         </ProdutosContainer>
-    }
+    };
 
 }
