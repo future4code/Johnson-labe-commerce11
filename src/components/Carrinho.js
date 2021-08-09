@@ -4,6 +4,7 @@ import styled from "styled-components";
 const CarrinhoContainer = styled.div `
    border: 1px solid black;
    padding: 8px;
+   background-color: blueviolet;
 `
 
 const ListaCarrinho = styled.div`

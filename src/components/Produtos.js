@@ -4,6 +4,7 @@ import styled from "styled-components";
 const ProdutosContainer = styled.div `
    border: 1px solid black;
    padding: 0 8px;
+   background-color: grey;
 `
 
 const ProdutosHeader = styled.div `
